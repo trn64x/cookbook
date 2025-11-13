@@ -62,11 +62,11 @@ function App() {
     recipeIndex: number
   ) => {
     setEdit({
-isEdit:false,
-value:e.currentTarget.textContent || '',
-index,
-section,
-recipeIndex
+      isEdit: true,
+      value: e.currentTarget.textContent || '',
+      index,
+      section,
+      recipeIndex,
     })
   }
   const submitValue = (e: React.FormEvent<HTMLFormElement>) => {
@@ -139,8 +139,8 @@ recipeIndex
                           edit.recipeIndex === recipeIndex &&
                           edit.section === 'ingredients' &&
                           edit.index === i ? (
-                            <form onSubmit={submitValue}>
-                              <Input
+                            <form className='flex flex-row gap-4' onSubmit={submitValue}>
+                              <Input className='w-[80%] text-black border-black'
                                 value={edit.value}
                                 onChange={(e) =>
                                   setEdit((prev) =>
@@ -148,7 +148,7 @@ recipeIndex
                                   )
                                 }
                               />
-                              <button type="submit" className="mt-1">
+                              <button type="submit" className="h-9 flex justify-center items-center text-center w-20">
                                 Zapisz
                               </button>
                             </form>
@@ -175,8 +175,8 @@ recipeIndex
                           edit.recipeIndex === recipeIndex &&
                           edit.section === 'steps' &&
                           edit.index === i ? (
-                            <form onSubmit={submitValue}>
-                              <Input
+                            <form className='flex flex-row gap-4' onSubmit={submitValue}>
+                              <Input className='w-[80%] text-black border-black'
                                 value={edit.value}
                                 onChange={(e) =>
                                   setEdit((prev) =>
@@ -184,7 +184,7 @@ recipeIndex
                                   )
                                 }
                               />
-                              <button type="submit" className="mt-1">
+                              <button type="submit" className="h-9 flex justify-center items-center text-center w-20">
                                 Zapisz
                               </button>
                             </form>
