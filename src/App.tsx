@@ -62,11 +62,11 @@ function App() {
     recipeIndex: number
   ) => {
     setEdit({
-      isEdit: true,
-      value: e.currentTarget.textContent || '',
-      index,
-      section,
-      recipeIndex,
+isEdit:false,
+value:e.currentTarget.textContent || '',
+index,
+section,
+recipeIndex
     })
   }
   const submitValue = (e: React.FormEvent<HTMLFormElement>) => {
